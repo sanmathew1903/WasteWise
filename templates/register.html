@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link href="https://www.wastewise.co.uk/wp-content/themes/wastewise/assets/images/favicon-32x32.png" rel="icon">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            background-image: url('static/assets/img/design.png');
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin: 10px 0;
+            color: #555;
+            text-align: left;
+            width: 100%;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #4caf50;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>User Registration</h1>
+
+        <form action="register" method="post">
+            {% csrf_token %}
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" placeholder="First Name" tabindex="1">
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Last Name" tabindex="2">
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Username" tabindex="3">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" tabindex="4">
+
+            <label for="password1">Password:</label>
+            <input type="password" id="password1" name="password1" placeholder="Password" tabindex="5">
+
+            <label for="password2">Confirm Password:</label>
+            <input type="password" id="password2" name="password2" placeholder="Confirm Password" tabindex="6">
+
+            <button type="submit">Register</button>
+        </form>
+    <div>
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+    </div>
+</body>
+</html>

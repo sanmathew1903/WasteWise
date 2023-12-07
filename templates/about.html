@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>About</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://www.wastewise.co.uk/wp-content/themes/wastewise/assets/images/favicon-32x32.png" rel="icon">
+  
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: PhotoFolio
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center ">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index'%}" class="logo d-flex align-items-center  me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <i class="bi-cup-hot"></i>
+        <h1>WasteWise</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}" class="active">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="gallery.html">Nature</a></li>
+              <li><a href="gallery.html">People</a></li>
+              <li><a href="gallery.html">Architecture</a></li>
+              <li><a href="gallery.html">Animals</a></li>
+              <li><a href="gallery.html">Sports</a></li>
+              <li><a href="gallery.html">Travel</a></li>
+              <li class="dropdown"><a href="#"><span>Sub Menu</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Sub Menu 1</a></li>
+                  <li><a href="#">Sub Menu 2</a></li>
+                  <li><a href="#">Sub Menu 3</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li> -->
+          <li><a href="{% url 'services' %}">How it works ?</a></li>
+          <li><a href="{% url 'contact' %}">Donate Now!</a></li>
+          
+          
+          <form action="logout">
+            <li><a id="logout" href="{% url 'logout' %}">Logout</a></li>
+          </form>
+
+        </ul>
+      </nav><!-- .navbar -->
+
+      <span id="greetings">Hello <span style="text-transform:uppercase;">{{user.first_name}} &nbsp</span>
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main" data-aos="fade" data-aos-delay="1500">
+
+    <!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2>About</h2>
+            <p>Welcome to WasteWise, where our passion for both gastronomy and sustainability collide to create a culinary revolution. We are not just a food waste management company; we are the architects of change, dedicated to transforming the way the world views and manages its excess food.
+              </p>
+
+            <!-- <a class="cta-btn" href="contact.html">Available for hire</a> -->
+
+          </div>
+        </div>
+      </div>
+    </div><!-- End Page Header -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="https://img.freepik.com/premium-vector/continuous-one-line-drawing-concept-neighbors-sharing-things-helping-each-other-doodle-vector-illustration_660848-1836.jpg" class="img-fluid" alt="">
+          </div>
+            <p class="py-3">
+              At WasteWise, we believe in the power of responsible consumption, and we've made it our mission to tackle the global issue of food waste head-on. Our journey began with a simple idea: why let perfectly good food go to waste when it could nourish communities and contribute to a healthier planet?
+              
+              Our approach goes beyond the basics of waste disposal. We are committed to turning food waste into a resource, unlocking its potential to create positive impacts. Through innovative solutions and cutting-edge technologies, we seamlessly integrate sustainability into the heart of culinary practices.
+              
+              Every plate has a story, and we are here to rewrite it. 
+            </p>
+            <p class="m-0">
+              Join us on a gastronomic adventure that transcends the boundaries of traditional food management. We invite you to explore the art of smart food waste solutions with us, where waste is not just minimized but transformed into opportunities for a greener, more sustainable tomorrow.
+              
+              At WasteWise, we are waste warriors on a mission. As you navigate through our platform, you'll discover how we are not only reducing food waste but also nourishing communities, one meal at a time. Be part of the food revolution, where every choice matters, and together, we can create a world where waste is a thing of the past.
+              
+              Welcome to WasteWise, where sustainability meets savory solutions, and the journey from plate to planet begins.
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+  
+   
+
+           
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <!-- <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright">
+     
+  </footer>End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://www.wastewise.co.uk/wp-content/themes/wastewise/assets/images/favicon-32x32.png" rel="icon">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            background-image: url('static/assets/img/design.png');
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; 
+            font-family: Arial, sans-serif;
+        }
+        
+        .login-container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+        
+        .login-box {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #D9534F;
+        }
+        
+        .login-form {
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        
+        input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        button {
+            background-color: #4fd97b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #D43F3A;
+        }
+        
+        .forgot-password {
+            display: block;
+            text-decoration: none;
+            color: #D9534F;
+            margin-top: 10px;
+        }
+        
+    </style>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            background-image: url('static/assets/img/design.png');
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        } 
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            
+            <form class="login-form" action="login" method="post">
+              {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <a href="{% url 'register' %}" class="forgot-password">Sign Up ?</a>
+        </div>
+    </div>
+</body>
+</html>

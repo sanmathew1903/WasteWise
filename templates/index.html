@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://www.wastewise.co.uk/wp-content/themes/wastewise/assets/images/favicon-32x32.png" rel="icon">
+  
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: PhotoFolio
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center ">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index'%}" class="logo d-flex align-items-center  me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <i class="bi-cup-hot"></i>
+        <h1>WasteWise</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}" class="active">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="gallery.html">Nature</a></li>
+              <li><a href="gallery.html">People</a></li>
+              <li><a href="gallery.html">Architecture</a></li>
+              <li><a href="gallery.html">Animals</a></li>
+              <li><a href="gallery.html">Sports</a></li>
+              <li><a href="gallery.html">Travel</a></li>
+              <li class="dropdown"><a href="#"><span>Sub Menu</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Sub Menu 1</a></li>
+                  <li><a href="#">Sub Menu 2</a></li>
+                  <li><a href="#">Sub Menu 3</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li> -->
+          <li><a href="{% url 'services' %}">How it works ?</a></li>
+          <li><a href="{% url 'contact' %}">Donate Now!</a></li>
+          
+          
+          <form action="logout">
+            <li><a id="logout" href="{% url 'logout' %}">Logout</a></li>
+          </form>
+
+        </ul>
+      </nav><!-- .navbar -->
+
+      <span id="greetings">Hello <span style="text-transform:uppercase;">{{user.first_name}} &nbsp</span>
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <h2>From  <span>Bin to Banquet: </span> Redefining Food Waste with Innovation and Purpose</h2>
+          <!-- <p>Blanditiis praesentium aliquam illum tempore incidunt debitis dolorem magni est deserunt sed qui libero. Qui voluptas amet.</p> -->
+          <a href="{% url 'contact' %}" class="btn-get-started">For Donation CLICK HERE </a>
+          <br>
+          <br>
+          <a href="{% url 'order' %}" class="btn-get-started">For Available Donations CLICK HERE </a>
+
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <div class="page-header d-flex align-items-center">
+    <div class="container position-relative">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6 text-center">
+          <!-- <h2>How It Works</h2> -->
+          <p>In a world abundant with resources, the harsh reality persists that hunger and inadequate access to food plague millions of lives. The global challenge of food poverty is a stark reminder that the distribution and availability of nourishment remain uneven.
+
+            Across continents, communities grapple with the harsh grip of hunger, facing a daily struggle for sustenance. Factors such as economic disparities, conflict, and natural disasters exacerbate the problem, leaving vulnerable populations in a perpetual state of food insecurity.
+            
+            The scarcity of food resources is not merely a numerical concern; it is a poignant reflection of societal imbalances. While some regions boast plenty, others face the haunting specter of empty plates and malnutrition. This imbalance not only affects physical well-being but also hampers educational and economic opportunities, perpetuating a cycle of poverty.
+            
+            Addressing the issue of food scarcity requires a multifaceted approach, involving sustainable agricultural practices, equitable distribution systems, and global cooperation. Initiatives aimed at reducing food waste, empowering local farmers, and ensuring fair trade practices play pivotal roles in reshaping the narrative of food poverty.
+            
+            At its core, the battle against hunger is a collective responsibility. It calls for concerted efforts from governments, organizations, and individuals alike to create a world where no one goes to bed hungry—a world where the availability of food is a universal right, not a privilege.</p>
+
+       </div>
+      </div>
+    </div>
+  </div>
+
+
+  <main id="main" data-aos="fade" data-aos-delay="1500">
+
+    
+    
+    <!-- ======= Gallery Section ======= -->
+      
+         
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-center w-100 h-100">
+           <img src="https://media.istockphoto.com/id/524903696/photo/poor-indian-children-asking-for-food-india.jpg?s=612x612&w=0&k=20&c=uAUDyZRdpReAW51hD29W7fOCTDzNrOdHkAdKXErbapU=" class="myCarousel img" alt="...">
+          </div>
+          </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center w-100 h-100">
+           <img src="https://st3.depositphotos.com/1022214/14081/i/450/depositphotos_140817282-stock-photo-man-throwing-leftovers-to-the.jpg" class="myCarousel img" alt="...">
+           
+          </div>
+       </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center w-100 h-100">
+           <img src="https://cdn.shopify.com/s/files/1/0555/8363/7660/files/Urban-plants-food-waste_ce4178c1-ceac-4963-8329-b0abfd58822e.jpg?v=1653041622" class="myCarousel img" alt="...">
+          </div>
+       </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center w-100 h-100">
+           <img src="https://waste2es.com/wp-content/uploads/2020/06/food-waste-management-during-covid-19-what-supermarkets-restaurants-and-pubs-should-do.jpg" class="myCarousel img" alt="...">
+          </div>
+       </div>
+        
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- </section>End Gallery Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <!-- <footer id="footer" class="footer">
+    <div class="container">
+      
+    </div>
+  </footer>End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+</html>
