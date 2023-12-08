@@ -1,3 +1,4 @@
+{%  load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,46 +24,62 @@
         #container {
             background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            padding: 20px 50px;
             text-align: center;
+            background-color: rgb(255,255,255,0.15);
+            backdrop-filter: blur(2px);
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
-            color: #333;
+            color: #fff;
         }
 
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 10px;
         }
 
         label {
-            margin: 10px 0;
-            color: #555;
+            margin: 5px 2px;
+            color: #fff;
             text-align: left;
             width: 100%;
+            display: none;
         }
 
         input {
             padding: 10px;
             margin-bottom: 15px;
             width: 100%;
+            background-color: transparent;
+            border: 2px solid #fff;
             box-sizing: border-box;
-            border: 1px solid #ccc;
             border-radius: 5px;
+            outline: none;
+            color: #fff;
             transition: border-color 0.3s ease;
         }
-
+        input ::placeholder{
+            color: #c6c6c6;
+        }
         input:focus {
             border-color: #4caf50;
+        }
+
+        .password::-ms-reveal{
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 2px;
         }
 
         button {
             background-color: #4caf50;
             color: white;
-            border: none;
+            border: 2px solid transparent;
             padding: 10px 20px;
             text-align: center;
             text-decoration: none;
@@ -74,7 +91,25 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            border: 2px solid #4caf50;
+            background-color: transparent;
+            color: #fff;
+        }
+        #incorrect-password{
+            color: #f00;
+            text-transform: capitalize;
+        }
+        #sign-in{
+            position: absolute;
+            bottom: 35px;
+            right: 45px;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        #sign-in:hover{
+            text-decoration: underline;
+            color: #4caf50;
         }
     </style>
 </head>
@@ -97,16 +132,17 @@
             <input type="email" id="email" name="email" placeholder="Email" tabindex="4">
 
             <label for="password1">Password:</label>
-            <input type="password" id="password1" name="password1" placeholder="Password" tabindex="5">
+            <input class="password" type="password" id="password1" name="password1" placeholder="Password" tabindex="5">
 
             <label for="password2">Confirm Password:</label>
-            <input type="password" id="password2" name="password2" placeholder="Confirm Password" tabindex="6">
+            <input class="password" type="password" id="password2" name="password2" placeholder="Confirm Password" tabindex="6">
 
             <button type="submit">Register</button>
+            <a id="sign-in" href="{% url 'login' %}">Sign in</a>
         </form>
     <div>
         {% for message in messages %}
-            {{message}}
+            <p id="incorrect-password">{{message}}</p>
         {% endfor %}
     </div>
 </body>
